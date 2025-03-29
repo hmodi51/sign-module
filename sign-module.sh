@@ -44,7 +44,7 @@ elif [[ $ans == "n" ]] || [[ $ans == "no" ]]; then
     fi
     openssl req -new -x509 -newkey rsa:2048 -keyout $privkey -outform DER -out $pubkey -nodes -days 36500 -subj "/CN=$commonName/"
     chmod 600 $privkey
-    chown root:root $privkey
+    sudo chown root:root $privkey
     echo -e "Key and certificate Generated"
 fi
 
